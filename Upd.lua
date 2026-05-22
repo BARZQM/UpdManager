@@ -6,7 +6,7 @@ UpdateManager.BuildVersion = "beta"
 
 function UpdateManager.checkForUpdate(currentVersionCode: number)
 	if type(currentVersionCode) ~= "number" then
-		warn("Ошибка: Переданный аргумент должен быть числом!")
+		warn("error | 02")
 		return nil
 	end
 	
