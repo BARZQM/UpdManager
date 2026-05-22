@@ -7,7 +7,7 @@ UpdateManager.BuildVersion = "release"
 
 function UpdateManager.runSystemCheck(currentVersionCode: number)
 	if type(currentVersionCode) ~= "number" then
-		return "Error: Local build version code must be a number."
+		return "Error: Loal build version code must be a number."
 	end
 	
 	if currentVersionCode < UpdateManager.LatestBuildCode then 
