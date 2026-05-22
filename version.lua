@@ -1,23 +1,25 @@
 local UpdateManager = {}
 
-UpdateManager.BuildCode = 518
+UpdateManager.LatestBuildCode = 501 -- Your actual max version
 UpdateManager.BuildName = "5.1"
 UpdateManager.BuildVersion = "test"
 
-function UpdateManager.checkForUpdate(currentVersionCode: number)
+-- The logic is now safely hidden on GitHub
+function UpdateManager.runSystemCheck(currentVersionCode: number)
 	if type(currentVersionCode) ~= "number" then
-		warn("Error: Argument must be a number!")
-		return nil
+		return "Error: Local build version code must be a number."
 	end
 	
-	if currentVersionCode < UpdateManager.BuildCode then 
+	if currentVersionCode < UpdateManager.LatestBuildCode then 
 		return string.format(
-			"New build %s (%s) available!",
-			UpdateManager.BuildName, UpdateManager.BuildVersion
+			"Update available! Current: %s. Latest: %s (%s).",
+			tostring(currentVersionCode),
+			UpdateManager.BuildName, 
+			UpdateManager.BuildVersion
 		)
 	end
 	
-	return "Latest version installed."
+	return "Success: Admin panel is up to date."
 end
 
 return UpdateManager
