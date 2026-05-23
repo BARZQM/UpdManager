@@ -1,7 +1,7 @@
 local UpdateManager = {}
 
 
-UpdateManager.LatestBuildCode = 519
+UpdateManager.LatestBuildCode = 518
 UpdateManager.BuildName = "5.1"
 UpdateManager.BuildVersion = "release"
 
